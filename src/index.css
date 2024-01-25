@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+header, nav, footer {
+    font-family: 'Fira Code', sans-serif;
+}
+
+#Line:first-child.ANIMATE {
+    transform: rotate(45deg) translate(6px, 5px);
+}
+
+#Line:nth-child(2).ANIMATE {
+    opacity: 0;
+}
+
+#Line:last-child.ANIMATE {
+    transform: rotate(-45deg) translate(6px, -5px);
+}
+
+.Nav-Link {
+    @apply hover:text-green-600 transition-colors duration-500 p-4 block;
+}
+
+.DropDown-Menu {
+    @apply md:text-left overflow-hidden md:absolute relative transition-height duration-500 bg-gray-50 h-0 md:top-20;
+}

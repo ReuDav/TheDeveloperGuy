@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import logo from "/tdg_logo.webp";
-const NavBar = () => {
+const NavigationBar = () => {
     const [height, setHeight] = useState(0);
     const changeNavHeight = (index, newHeight) => {
         if (index === 1) {
@@ -25,12 +25,12 @@ const NavBar = () => {
     return (
         <nav className="flex items-center p-3 w-full justify-between bg-gray-50">
             <div id="Logo"><a href="/"><img src={logo} alt="The Developer Guy Logo" style={{height: 50}} /></a></div>
-            <div id="NavLinks" className="md:h-auto overflow-hidden md:static absolute top-20 left-0 z-10 w-full transition-height duration-500 bg-inherit" style={{ height: `${height}px` }}>
+            <div id="NavLinks" className="md:!h-auto overflow-hidden md:static absolute top-20 left-0 z-10 w-full transition-height duration-500 bg-inherit" style={{ height: `${height}px` }}>
                 <ul className="flex md:gap-4 items-center md:flex-row flex-col w-full text-center justify-end h-auto">
                     <li className="md:w-auto w-full"><a href="" className="Nav-Link">Learn hub</a></li>
                     <li>
                         <button type="button" onClick={() => { ((dropDownMenu[0] ? changeNavHeight(3, 280) : changeNavHeight(3, 392)), ToggleDropDownMenu(0)) }} className="md:w-full Nav-Link box-border w-screen"> Courses v </button>
-                        <div id="DropDownMenu-1" className={`${dropDownMenu[0] ? "h-28 border-2 border-t-green-600" : ""} DropDown-Menu rounded-b-xl z-20`}>
+                        <div id="DropDownMenu-1" className={`${dropDownMenu[0] ? "!h-28 border-2 border-t-green-600" : ""} DropDown-Menu rounded-b-xl z-20`}>
                             <ul>
                                 <li className="md:w-auto w-full"><a href="" className="Nav-Link">Python quickstart course</a></li>
                                 <li className="md:w-auto w-full"><a href="" className="Nav-Link">Embedded dev fundamentals</a></li>
@@ -41,7 +41,7 @@ const NavBar = () => {
                     <li className="md:w-auto w-full"><a href="" className="Nav-Link">Downloads</a></li>
                     <li>
                         <button type="button" onClick={() => { ((dropDownMenu[1] ? changeNavHeight(2, 280) : changeNavHeight(2, 350)), ToggleDropDownMenu(1)) }} className="md:w-full Nav-Link w-screen"> Projects v </button>
-                        <div id="DropDownMenu-2" className={`${dropDownMenu[1] ? "h-15 border-2 border-t-green-600" : ""} DropDown-Menu right-0 rounded-b-xl z-10`}>
+                        <div id="DropDownMenu-2" className={`${dropDownMenu[1] ? "!h-15 border-2 border-t-green-600" : ""} DropDown-Menu right-0 rounded-b-xl z-10`}>
                             <ul>
                                 <li className="md:w-auto w-full "><a href="" className="Nav-Link">Vacuum Tweezers / Pickup tool</a></li>
                             </ul>
@@ -59,5 +59,4 @@ const NavBar = () => {
         </nav>
     );
 };
-
-export default NavBar;
+export default NavigationBar;
